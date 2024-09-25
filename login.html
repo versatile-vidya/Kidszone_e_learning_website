@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Login page</title>
+		<link rel="stylesheet" href="login.css"/>
+		<script type="text/javascript">  
+
+			function verifyPassword() 
+			{
+			  var pw = document.getElementById("pwd").value;  
+
+			  //check empty password field  
+
+			  if(pw == "") 
+			{ 
+	    			 document.getElementById("message").innerHTML = "**Fill the password please!";  
+
+			     return false;  
+
+			  }  
+
+			 //minimum password length validation  
+
+			  if(pw.length < 8) {  
+
+			     document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
+
+			     return false;  
+
+			  }    
+
+			//maximum length of password validation  
+
+			  if(pw.length > 15) {  
+
+			     document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+
+			     return false;  
+
+			  } else {  
+
+			     alert("Password is correct");  
+
+			  }  
+
+			}  
+
+			</script>   
+	</head>
+	<body>
+		<div class="login-box gradient">
+			<h2>Login</h2>
+			<form action="login.php" method="post" >
+				<div class="user-box">
+					<input type="text" name="user" required>
+					<label>UserName</label>
+				</div>
+				<div class="user-box">
+                                        <input type="password" name="pwd" id="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required/><!--onkeyup="verifyPassword()"-->
+                                        <label>Password</label>
+					   
+                                </div>
+				<div id = "message" style="color:red"> </div> <br><br> 				
+<!--
+				<div class="pass">
+         				 <a href="forget_password.php">Forgot Password?</a></div>-->
+				<div class= "button-form">
+					<input type="submit" value="login" name="login" ><!--onclick="return verifyPassword()">-->
+					<div id="register">
+						Don't have an account
+						<a href ="registration.html">register</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
+<!-- <?php
+include'login.html';
+
+        /*session_start();*/
+
+$con = pg_connect("host=192.168.16.1 port=5432 dbname=AG19 user=AG19");
+if (!$con){
+        echo "connection failed !";
+        exit;
+}
+else{
+        if(isset ($_GET['login']))
+        {
+                $username = $_GET['user'];
+                $pwd = $_GET['pwd'];
+                $q="select * from register where username='$username' and password='$pwd';";
+                $data = pg_query($con, $q);
+                $total= pg_num_rows($data);
+                if(total == 1){
+                        /*$_SESSION['user_name']=$username;*/
+                        echo "SUCCESFULL"/*<a href=front.html ></a>" */;
+/*header('location:front.html');*/
+                }
+                else{
+                        echo "login failed";
+                }
+        }
+}
+?>
+
+-->

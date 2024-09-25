@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">		
+		<title>Registration </title>
+		<link rel="stylesheet" href = "registration.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+	</head>
+	<body>
+		<div class="registration-box gradient">
+			<h2>Registration </h2>
+			<form  action ="register.php" method="get">
+				<div class ="user-box">
+					<input type="text" name="name" required>
+					<label>Name</label>
+				</div>
+				<div class ="user-box">
+                                        <input type="email" name="email" required>
+                                        <label>Email</label>
+                                </div>
+				<div class ="user-box">
+                                        <input type="text" name="user" required/>
+                                        <label>UserName</label>
+                                </div>
+				<div class ="user-box">
+                                        <input type="password" name="pwd" id="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required/>
+                                        <label>Create Password</label>
+                                </div>	
+				<div class ="user-box">
+                                        <input type="password" name="con_pwd" required/>
+                                        <label>Confirm Password</label>
+                                </div>
+				<div class ="user-box">
+                                        <input type="date" name="birthday" id ="birthday"/>
+                                        <label>Date Of Birth</label>
+                                </div>
+				<div class ="button-form">
+					<input type="submit" value="Register" name = 'add'><!--<a id ="submit" href=="#">Sign Up</a>-->
+				</div>
+				<br>
+				<br>
+				<div id="sign">
+					Return to Login Page
+					<a href ="login.html"> Login</a>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

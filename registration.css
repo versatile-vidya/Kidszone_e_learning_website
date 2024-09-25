@@ -1,0 +1,123 @@
+:root{
+	--font-style: 'Nunito Sans',sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color:#a9c9ff;
+	background-image:linear-gradient(45deg,#a9c9ff 0%,#ffbbec 100%);
+}
+.registration-box{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:400px;
+	padding:40px;
+	transform:translate(-50%,-50%);
+	/*background-image:linear-gradient(Steelblue,Darkblue);*/
+	box-shadow:18px 15px 25px rgba(5,4,6,0.7);
+	border-radius:10px;
+}
+.gradient{
+	width:400px;
+	background:linear-gradient(-45deg,#ee7752,#e73c7e,#9581f4,#23a6d5);
+	background-size:400%,400%;
+	animation:gradient 5s ease infinite;
+	border-radius:20px;
+	box-shadow:0px,0px,20px,rgb(0,0,0);
+}
+@keyframes gradient{
+	0%{
+		background-position:0% 50%;
+	}
+	50%{
+		background-position:100% 50%;
+	}
+	100%{
+		background-position:0% 50%;
+	}
+}
+.registration-box h2{
+	margin: 0 0 30px;
+	padding:0;
+	color:#fff;
+	text-align:center;
+}
+.registration-box .user-box input{
+	position:relative;
+	width:100%;
+	padding:10px 0;
+	font-size:16px;
+	color:#fff;
+	margin-bottom:30px;
+	border:none;
+	border-bottom:1px solid #fff;
+	outline :none;
+	background:transparent;
+}
+.registration-box .user-box label{
+	position:relative;
+	left:0;
+	top: -60px;
+	padding: 10px 0;
+	font-size:16px;
+	color:#fff;
+	pointer-events:none;
+	transition:0.5s;
+}
+.registration-box .user-box input:focus~label,.registration-box .user-box  input:valid~label{
+	top:-85px;
+	left:0;
+	color:#252416;
+	font-size:12px;
+}
+#submit{
+	padding:10px 20px;
+	color: #cbbddb;
+	font-size:16px;
+	text-decoration:none;
+	text-transform:uppercase;
+	overflow:hidden;
+	transition :0.5s;
+	letter-spacing:4px;
+	border:1px solid #8f7cec;
+	margin:auto;
+}
+#submit:hover{
+	background :#1e0202;
+	color:#fff;
+	border-radius:5px;
+	box-shadow: 0 0 5px #221c2c,0 0 25px #221c2c, 0 0 50px #221c2c, 0 0 100px #221c2c;
+}
+.button-form{
+	display:flex;
+	flex-direction:row;
+	margin-top:20px;
+}
+#sign a{
+	margin:auto;
+	color:#292727;
+	text-decoration: none;
+}
+#sign a:after{
+	display:block;
+	content:"";
+	border-bottom:solid 1px #1c2b2b;
+	padding-bottom:1%;
+	transform:scaleX(0);
+	transition:transform 300ms ease-in-out;
+}
+#sign a:hover:after{
+	transform:scaleX(1);
+}
+
+
+
+
+	
+
+
+
+
+
